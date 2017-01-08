@@ -7,7 +7,7 @@ ARG BRANCH="master"
 ARG URL="https://github.com/digitalocean/netbox.git"
 ARG ENTRY_SCRIPT="https://raw.githubusercontent.com/digitalocean/netbox/master/docker/docker-entrypoint.sh"
 ARG CONFIG_SCRIPT="https://raw.githubusercontent.com/digitalocean/netbox/master/netbox/netbox/configuration.docker.py"
-ARG GUNICORN_CONF="https://raw.githubusercontent.com/digitalocean/netbox/master/docker/gunicorn_config.py
+ARG GUNICORN_CONF="https://raw.githubusercontent.com/digitalocean/netbox/master/docker/gunicorn_config.py"
 
 RUN git clone --depth 1 $URL -b $BRANCH .
 
