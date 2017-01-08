@@ -3,6 +3,8 @@
 This is a Dockerfile for [NetBox](https://github.com/digitalocean/netbox) the open-source web based IPAM and DCIM tool, nitially conceived by the network engineering team at DigitalOcean.
 The image is based on debian with python 2.7 runs with nginx webserver as reverse-proxy and unicorn for the django app.
 
+[![](https://images.microbadger.com/badges/image/kellersoftware/netbox.svg)](https://microbadger.com/images/kellersoftware/netbox)
+
 It will:
 
 * Install debian jessie as base system.
