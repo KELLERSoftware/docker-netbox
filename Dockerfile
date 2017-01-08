@@ -23,6 +23,5 @@ ADD $GUNICORN_CONF /opt/netbox/
 #todo: generate nginx config
 #ADD nginx.conf /etc/netbox-nginx/
 
-# Expose port and run the app
 EXPOSE 80
 ENTRYPOINT [ "/docker-entrypoint.sh" ]
