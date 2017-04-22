@@ -17,6 +17,7 @@ RUN apt-get update -qq && apt-get install -y libldap2-dev libsasl2-dev libssl-de
     pip install -r requirements.txt
 
 ADD $ENTRY_SCRIPT /docker-entrypoint.sh
+RUN chmod +x /docker-entrypoint.sh
 ADD $CONFIG_SCRIPT /opt/netbox/netbox/netbox/configuration.py
 ADD $GUNICORN_CONF /opt/netbox/
 
