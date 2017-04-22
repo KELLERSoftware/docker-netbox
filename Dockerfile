@@ -8,6 +8,7 @@ ARG URL="https://github.com/digitalocean/netbox.git"
 ARG ENTRY_SCRIPT="https://raw.githubusercontent.com/digitalocean/netbox/master/docker/docker-entrypoint.sh"
 ARG CONFIG_SCRIPT="https://raw.githubusercontent.com/digitalocean/netbox/master/netbox/netbox/configuration.docker.py"
 ARG GUNICORN_CONF="https://raw.githubusercontent.com/digitalocean/netbox/master/docker/gunicorn_config.py"
+ARG NGINX_CONF="https://raw.githubusercontent.com/digitalocean/netbox/master/docker/nginx.conf"
 
 RUN git clone --depth 1 $URL -b $BRANCH .
 
@@ -21,8 +22,7 @@ RUN chmod +x /docker-entrypoint.sh
 ADD $CONFIG_SCRIPT /opt/netbox/netbox/netbox/configuration.py
 ADD $GUNICORN_CONF /opt/netbox/
 
-#todo: generate nginx config
-#ADD nginx.conf /etc/netbox-nginx/
+ADD NGINX_CONF /etc/nginx/nginx.conf
 
 EXPOSE 80
 ENTRYPOINT [ "/docker-entrypoint.sh" ]
