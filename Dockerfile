@@ -22,7 +22,7 @@ RUN chmod +x /docker-entrypoint.sh
 ADD $CONFIG_SCRIPT /opt/netbox/netbox/netbox/configuration.py
 ADD $GUNICORN_CONF /opt/netbox/
 
-ADD NGINX_CONF /etc/nginx/nginx.conf
+ADD $NGINX_CONF /etc/nginx/nginx.conf
 
 EXPOSE 80
 ENTRYPOINT [ "/docker-entrypoint.sh" ]
